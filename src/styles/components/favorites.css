@@ -1,0 +1,136 @@
+.favorites {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.favorites__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.favorites__heart {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--favorite-bg);
+  color: var(--accent);
+}
+
+.favorites__heart svg {
+  width: 18px;
+  height: 18px;
+}
+
+.favorites__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.favorites__count {
+  color: var(--text);
+  font-size: 0.82rem;
+}
+
+.favorites__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* ---------- Empty state ---------- */
+.favorites__empty {
+  text-align: center;
+  color: var(--text);
+  padding: 24px 8px;
+}
+
+.favorites__empty-hint {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+/* ---------- Saved book row ---------- */
+.favorite {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid var(--border)
+}
+
+.favorite:hover {
+  background-color: var(--surface-2);
+}
+
+.favorite__cover {
+  width: 40px;
+  height: 56px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: var(--surface-2);
+}
+
+.favorite__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.favorite__title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favorite__author,
+.favorite__year {
+  color: var(--text);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favorite__remove {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--red);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.favorite__remove:hover {
+  background-color: var(--surface);
+  transform: scale(1.12);
+}
+
+.favorite__remove svg {
+  width: 16px;
+  height: 16px;
+}

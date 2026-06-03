@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+@import url('./variables.css');
+@import url('./base.css');
+@import url('./layout.css');
+
+@import url('./components/theme-toggle.css');
+@import url('./components/search.css');
+@import url('./components/book-card.css');
+@import url('./components/favorites.css');
+@import url('./components/status.css');

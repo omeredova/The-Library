@@ -1,0 +1,51 @@
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 64px 24px;
+  color: var(--text);
+}
+
+.status__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--surface-2);
+  color: var(--accent);
+}
+
+.status__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.status__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--title);
+}
+
+.status__hint {
+  font-size: 0.92rem;
+  max-width: 360px;
+}
+
+/* Loading spinner. */
+.status__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--surface-2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

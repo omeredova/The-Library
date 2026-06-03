@@ -1,0 +1,135 @@
+/* ---------- Header ---------- */
+.header {
+  border-bottom: 1px solid var(--border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 12px;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__logo {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.header__logo svg {
+  width: 22px;
+  height: 22px;
+}
+
+.header__titles {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.header__name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.header__tagline {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+/* ---------- Main ---------- */
+.main {
+  flex: 1 0 auto;
+  padding-block: 24px 28px;
+}
+
+/* ---------- Workspace: results + favorites sidebar ---------- */
+/*
+ *   col 1 (1fr)             col 2 (300px)
+ *   ┌──────────────────┐
+ *   │ toolbar (Author) │    (empty)
+ *   ├──────────────────┤    ┌────────────┐
+ *   │ content (grid)   │    │ Favorites  │  ← same row: same top, same height
+ *   └──────────────────┘    └────────────┘
+ */
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 28px;
+  margin-top: 20px;
+}
+
+.results__toolbar {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.results__content {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
+}
+
+.results__content:has(.status) {
+  grid-column: 1 / -1;
+}
+
+.favorites {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text);
+  font-size: 0.82rem;
+}
+
+.footer a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .favorites {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .results__toolbar {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .results__content,
+  .results__content:has(.status) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
