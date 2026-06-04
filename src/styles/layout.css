@@ -123,6 +123,7 @@
   }
 
   .results__toolbar {
+    margin-top: 15px;
     grid-column: 1;
     grid-row: 2;
   }
